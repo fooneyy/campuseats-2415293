@@ -154,7 +154,6 @@ a.card:hover { border-color: var(--green-light); }
   .nav { flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.95rem; }
   .container { padding: 1rem; }
 }
-
 .link { background: none; border: 0; padding: 0; font: inherit; color: #fff; cursor:
 pointer; }
 .link.danger { color: #b3261e; font-size: 0.9rem; }

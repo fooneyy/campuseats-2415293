@@ -3,11 +3,25 @@ const MAHALLAHS = ['Ali', 'Aminah', 'Faruq', 'Asiah', 'Bilal', 'Hafsa', 'Uthman'
 'Zubair']
 // A plain function: values in, errors object out. Empty object = valid.
 function validate(values) {
- const errors = {}
- if (values.name.trim().length < 3) errors.name = 'Enter your name (at least 3 characters).'
- // TODO: mahallah must be chosen
- // TODO: pickupTime must be between '07:00' and '22:00' (strings compare fine)
- return errors
+  const errors = {}
+
+  if (values.name.trim().length < 3) {
+    errors.name = 'Enter your name (at least 3 characters).'
+  }
+
+  if (!values.mahallah) {
+    errors.mahallah = 'Please select a mahallah.'
+  }
+
+  if (
+    !values.pickupTime ||
+    values.pickupTime < '07:00' ||
+    values.pickupTime > '22:00'
+  ) {
+    errors.pickupTime = 'Pickup time must be between 07:00 and 22:00.'
+  }
+
+  return errors
 }
 function CheckoutForm({ onPlaceOrder }) {
  const [values, setValues] = useState({ name: '', mahallah: '', pickupTime: '' })
@@ -21,8 +35,9 @@ function CheckoutForm({ onPlaceOrder }) {
  event.preventDefault() // stop the page reloading
  const found = validate(values)
  setErrors(found)
- // TODO: if found has no keys, call onPlaceOrder(values)
- }
+if (Object.keys(found).length === 0) {
+  onPlaceOrder(values)
+} }
  return (
  <form className="card form" onSubmit={handleSubmit} noValidate>
  <h3>Checkout</h3>
@@ -35,9 +50,17 @@ onChange={handleChange}>
  <option value="">Select…</option>
  {MAHALLAHS.map((m) => <option key={m} value={m}>{m}</option>)}
  </select>
- {/* TODO: show errors.mahallah */}
- {/* TODO: label + <input type="time" name="pickupTime" ...> + its error */}
- <button type="submit" className="btn">Place order</button>
+ {errors.mahallah && <p className="error">{errors.mahallah}</p>}
+<label>
+  Pickup Time
+  <input
+    type="time"
+    name="pickupTime"
+    value={values.pickupTime}
+    onChange={handleChange}
+  />
+</label>
+{errors.pickupTime && <p className="error">{errors.pickupTime}</p>} <button type="submit" className="btn">Place order</button>
  </form>
  )
 }
