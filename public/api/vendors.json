@@ -74,14 +74,14 @@
     ]
   },
   {
-    "id": "2619687-kafe-aminah",
-    "name": "Kafe Mahallah Aminah",
+    "id": "2619687-Atep's-Cafe",
+    "name": "Atep's Cafe",
     "location": "Mahallah Aminah, Ground Floor",
     "openHours": "8:00 am - 9:00 pm",
     "isOpen": true,
     "menu": [
       {
-        "id": "2619687-kafe-aminah-1",
+        "id": "2619687-Atep's-Cafe-1",
         "name": "Nasi Ayam Penyet",
         "description": "Smashed fried chicken with sambal and rice",
         "price": 9,
@@ -89,7 +89,7 @@
         "available": true
       },
       {
-        "id": "2619687-kafe-aminah-2",
+        "id": "2619687-Atep's-Cafe-2",
         "name": "Air Bandung",
         "description": "Rose syrup with milk",
         "price": 3,
@@ -101,8 +101,8 @@
 
 ,
   {
- "id": "2416464-kopi-dahlia",
- "name": "Kopi Dahlia",
+ "id": "2416464-kopi-Dhaiyan",
+ "name": "Kopi Dhaiyan",
  "location": "Mahallah Asma, Block C",
  "openHours": "8:00 am - 11:00 pm",
  "isOpen": true,

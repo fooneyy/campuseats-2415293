@@ -18,4 +18,4 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Vendor Data Credits
 
 - Vendor 1: Iman Kitchen — my own shop.
-- Vendors 2–3: Shop data provided by classmates with matric numbers [2619687] and [2416425].
+- Vendors 2–3: Shop data provided by classmates with matric numbers [2619687] and [2416464].
